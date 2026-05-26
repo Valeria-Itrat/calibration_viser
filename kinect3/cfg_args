@@ -1,0 +1,1 @@
+Namespace(sh_degree=3, source_path='C:\\Projects\\Itrat_Valeria_Gaussian\\SE-GS\\dataset_segs_synthetic', model_path='C:\\Users\\EXP_Research\\Documents\\projects\\gaussian-splatting\\output\\kinect3', images='images', depths='', resolution=-1, white_background=False, train_test_exp=False, data_device='cpu', eval=True)

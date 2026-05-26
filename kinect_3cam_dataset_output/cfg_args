@@ -1,0 +1,1 @@
+Namespace(sh_degree=3, source_path='C:\\Projects\\Itrat_Valeria_Gaussian\\kinect_3cam_dataset', model_path='C:\\Projects\\Itrat_Valeria_Gaussian\\kinect_3cam_dataset_output', images='images', depths='', resolution=-1, white_background=False, train_test_exp=False, data_device='cuda', eval=False)

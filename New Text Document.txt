@@ -1,0 +1,6 @@
+conda create -n viser_gs python=3.10
+conda activate viser_gs
+pip install -r C:\Projects\Itrat_Valeria_Gaussian\requirements_viser.txt
+
+cd C:\Projects\Itrat_Valeria_Gaussian
+python view_kinect_3cam_viser.py --splat-path "C:\Projects\Itrat_Valeria_Gaussian\kinect_3cam_dataset_output_v2\point_cloud\iteration_30000\point_cloud.ply"
