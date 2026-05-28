@@ -7,6 +7,9 @@ import time
 from pathlib import Path
 from typing import NamedTuple
 
+import os
+import sys
+
 import numpy as np
 import tyro
 import viser
@@ -14,10 +17,12 @@ from PIL import Image
 
 from example_viser import load_ply_file, load_splat_file
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-DEFAULT_SPLAT = Path(r"C:\Projects\Itrat_Valeria_Gaussian\point_cloud.ply")
-DEFAULT_DATASET = Path(r"C:\Projects\Itrat_Valeria_Gaussian\kinect_3cam_dataset")
-
+DEFAULT_SPLAT = Path(os.path.join(BASE_DIR, r"kinect_3cam_dataset_output_v2\point_cloud\iteration_30000\point_cloud.ply")) #Path(r"C:\Projects\Itrat_Valeria_Gaussian\point_cloud.ply")
+DEFAULT_DATASET = Path(os.path.join(BASE_DIR, "kinect_3cam_dataset")) #Path(r"C:\Users\Valeria\OneDrive - Rice University\calibration_viser\kinect_3cam_dataset")
+print(f"DEFAULT_SPLAT: {DEFAULT_SPLAT}")
+print(f"DEFAULT_DATASET: {DEFAULT_DATASET}")
 
 class CameraPose(NamedTuple):
     name: str

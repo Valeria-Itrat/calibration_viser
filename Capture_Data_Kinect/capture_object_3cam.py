@@ -4,9 +4,7 @@ Capture one object image from each Azure Kinect camera.
 
 Use case:
   - Static object capture for Gaussian Splatting / reconstruction.
-  - Preview all available cameras.
   - Manually adjust exposure/gain/white balance from keyboard.
-  - Press SPACE to save one image per camera with the same timestamp.
 
 Outputs:
   ObjectCapture/cam0/object_<timestamp>.png
@@ -51,7 +49,7 @@ except ImportError:
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 OUT_DIR = os.path.join(BASE_DIR, "ObjectCapture")
 
-# Change this if you only want two cameras, e.g. [0, 1]
+# two cameras: [0, 1]; three cameras: [0, 1, 2]
 CAMERA_IDS = [0, 1]
 
 # For object capture, standalone is usually fine.
@@ -129,18 +127,18 @@ def draw_status(frame, label, exposure_us, gain, whitebalance):
     h, w = out.shape[:2]
     cv2.rectangle(out, (0, 0), (w, 92), (20, 20, 20), -1)
 
-    wb_txt = "AUTO/unchanged" if whitebalance is None else str(whitebalance)
-    lines = [
-        f"{label}",
-        f"Exposure: {exposure_us} us   Gain: {gain}   WB: {wb_txt}",
-        "SPACE save | ESC exit | 1/2 exp +/-1000 | 3/4 exp +/-5000 | 5/6 gain | 7/8 WB",
+#    wb_txt = "AUTO/unchanged" if whitebalance is None else str(whitebalance)
+#    lines = [
+#        f"{label}",
+#        f"Exposure: {exposure_us} us   Gain: {gain}   WB: {wb_txt}",
+#        "SPACE save | ESC exit | 1/2 exp +/-1000 | 3/4 exp +/-5000 | 5/6 gain | 7/8 WB",
     ]
 
-    y = 24
-    for i, line in enumerate(lines):
-        color = (0, 220, 80) if i == 0 else (220, 220, 220)
-        cv2.putText(out, line, (12, y), cv2.FONT_HERSHEY_SIMPLEX, 0.55, color, 1)
-        y += 28
+#    y = 24
+#    for i, line in enumerate(lines):
+#       color = (0, 220, 80) if i == 0 else (220, 220, 220)
+#        cv2.putText(out, line, (12, y), cv2.FONT_HERSHEY_SIMPLEX, 0.55, color, 1)
+#        y += 28
 
     return out
 
